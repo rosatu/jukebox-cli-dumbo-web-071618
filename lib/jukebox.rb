@@ -34,6 +34,7 @@ end
 
 def play(songs)
   puts "Please enter a song name or number:"
+<<<<<<< HEAD
    song_input = gets.chomp    
     if songs.include?(song_input) 
     puts "Playing #{song_input}"
@@ -41,6 +42,18 @@ def play(songs)
     puts "Playing #{songs[song_input.to_i - 1]}"
     else 
     puts "Invalid input, please try again"
+=======
+  gets.chomp
+    loop do
+    if (gets.chomp != Integer) && helpful_hash(songs).include?(gets.chomp) 
+    puts "Playing #{song_input}"
+    elsif (gets.chomp == Integer) && helpful_hash(songs).include?(gets.chomp)
+    puts "Playing #{helpful_hash(songs)[gets.chomp + 1]}"
+    else 
+    puts "Invalid input, please try again"
+    play(songs)
+    end
+>>>>>>> 688218414e498d7d037e082426b04850894feab4
     end
 end  
 
